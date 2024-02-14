@@ -1,0 +1,2 @@
+// Declarations
+const display
