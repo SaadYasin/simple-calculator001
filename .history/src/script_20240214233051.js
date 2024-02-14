@@ -33,8 +33,8 @@ numberElement.forEach((number) => {
 });
 
 // Display operators and eliminate duplicates
-operationElement.forEach((operation) => {
-  operation.addEventListener('click', (e) => {
+operationElement.forEach((operation) => { 
+  operation.addEventListener('click', (e) => { 
     if (!displayNum2) return;
     haveDot = false;
     const operationName = e.target.innerText;
@@ -46,12 +46,5 @@ operationElement.forEach((operation) => {
     }
     clearVar(operationName);
     lastOperation = operationName;
-  });
-});
-
-// Calculate function
-const calculate = () => { 
-  if (lastOperation === "×") {
-    result = parseFloat(result) * parseFloat(displayNum2);
-  }
-}
+  })
+})

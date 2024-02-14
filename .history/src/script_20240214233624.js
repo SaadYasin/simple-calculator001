@@ -50,8 +50,7 @@ operationElement.forEach((operation) => {
 });
 
 // Calculate function
-const calculate = () => { 
-  if (lastOperation === "×") {
-    result = parseFloat(result) * parseFloat(displayNum2);
-  }
+
+if (lastOperation === '×') {
+  result = parseFloat(result) * parseFloat(displayNum2);
 }
