@@ -18,9 +18,7 @@ let result = null;
 let lastOperation = "";
 let haveDot = false;
 
-/* ***************************** */
-/* Buttons click event listeners */
-/* ***************************** */
+/* Buttons lick event listeners */
 
 // Add click event listener to numbers buttons to display numbers and eliminate duplicates
 numberElement.forEach((number) => {

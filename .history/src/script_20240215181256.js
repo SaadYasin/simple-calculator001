@@ -17,7 +17,6 @@ let result = null;
 
 let lastOperation = "";
 let haveDot = false;
-
 /* ***************************** */
 /* Buttons click event listeners */
 /* ***************************** */

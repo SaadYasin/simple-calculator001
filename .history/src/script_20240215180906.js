@@ -18,11 +18,10 @@ let result = null;
 let lastOperation = "";
 let haveDot = false;
 
-/* ***************************** */
-/* Buttons click event listeners */
-/* ***************************** */
-
-// Add click event listener to numbers buttons to display numbers and eliminate duplicates
+/* ********************************************************************** */
+/* Add click event listener to numbers buttons to display numbers and 
+/* eliminate duplicates                                                   */
+/* ********************************************************************** */
 numberElement.forEach((number) => {
   number.addEventListener('click', (e) => {
     if(e.target.innerText === '.' && !haveDot){
@@ -35,7 +34,7 @@ numberElement.forEach((number) => {
   });
 });
 
-// Add click event listener to operators buttons to display operators and eliminate duplicates     
+// 
 operationElement.forEach((operation) => {
   operation.addEventListener('click', (e) => {
     if (!displayNum2) return;

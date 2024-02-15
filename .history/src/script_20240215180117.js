@@ -18,11 +18,10 @@ let result = null;
 let lastOperation = "";
 let haveDot = false;
 
-/* ***************************** */
-/* Buttons click event listeners */
-/* ***************************** */
-
-// Add click event listener to numbers buttons to display numbers and eliminate duplicates
+/* ********************************************************************** */
+/* Add click event listener to numbers buttons to display operators and 
+/* eliminate duplicates                                                   */
+/* ********************************************************************** */
 numberElement.forEach((number) => {
   number.addEventListener('click', (e) => {
     if(e.target.innerText === '.' && !haveDot){
@@ -35,7 +34,10 @@ numberElement.forEach((number) => {
   });
 });
 
-// Add click event listener to operators buttons to display operators and eliminate duplicates     
+/* ********************************************************************** */
+/* Add click event listener to operators buttons to display operators and 
+/* eliminate duplicates                                                   */
+/* ********************************************************************** */
 operationElement.forEach((operation) => {
   operation.addEventListener('click', (e) => {
     if (!displayNum2) return;
@@ -53,21 +55,9 @@ operationElement.forEach((operation) => {
   });
 });
 
-// Add event listener to equal sign button to get the final result
-equalElement.addEventListener("click", () => {
-  if (!displayNum2 || !displayNum1) return;
-  haveDot = false;
-  calculate();
-  clearVar();
-  displayTwo.innerText = result;
-  displayTemp.innerText = "";
-  displayNum2 = result;
-  displayNum1 = "";
-});
-
-// Add click event listener to clear all button to clear all the entries
-
-// Clear var function
+/* ****************** */
+/* Clear var function */
+/* ****************** */
 const clearVar = (name = "") => {
   displayNum1 += displayNum2 + " " + name + " ";
   displayOne.innerText = displayNum1;
@@ -76,7 +66,10 @@ const clearVar = (name = "") => {
   displayTemp.innerText = result;
 };
 
-// Calculate function - to perform the mathematical calculations
+
+/* ************************************************************* */
+/* Calculate function - to perform thr mathematical calculations */
+/* ************************************************************* */
 const calculate = () => {
   if (lastOperation === "×") {
     result = parseFloat(result) * parseFloat(displayNum2);
@@ -91,3 +84,16 @@ const calculate = () => {
   }
 };
 
+/* *************************************************************** */
+/* Add event listener to equal sign button to get the final result */
+/* *************************************************************** */
+equalElement.addEventListener("click", () => {
+  if (!displayNum2 || !displayNum1) return;
+  haveDot = false;
+  calculate();
+  clearVar();
+  displayTwo.innerText = result;
+  displayTemp.innerText = "";
+  displayNum2 = result;
+  displayNum1 = "";
+});
