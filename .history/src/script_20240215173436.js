@@ -68,27 +68,16 @@ const clearVar = (name = "") => {
 /* ************************************************************* */
 /* Calculate function - to perform thr mathematical calculations */
 /* ************************************************************* */
-const calculate = () => {
-  if (lastOperation === "×") {
+const calculate = () => { 
+  if (lastOperation === "x") {
     result = parseFloat(result) * parseFloat(displayNum2);
   } else if (lastOperation === "+") {
     result = parseFloat(result) + parseFloat(displayNum2);
   } else if (lastOperation === "-") {
     result = parseFloat(result) - parseFloat(displayNum2);
-  } else if (lastOperation === "÷") {
+  } else if (lastOperation === "/") {
     result = parseFloat(result) / parseFloat(displayNum2);
   } else if (lastOperation === "%") {
     result = parseFloat(result) % parseFloat(displayNum2);
-  }
-};
-
-equalElement.addEventListener("click", () => {
-  if (!displayNum2 || !displayNum1) return;
-  haveDot = false;
-  calculate();
-  clearVar();
-  displayTwo.innerText = result;
-  displayTemp.innerText = "";
-  displayNum2 = result;
-  displayNum1 = "";
-});
+  } 
+}

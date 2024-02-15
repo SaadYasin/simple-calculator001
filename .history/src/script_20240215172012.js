@@ -41,7 +41,7 @@ operationElement.forEach((operation) => {
     if (!displayNum2) return;
     haveDot = false;
 
-    const operationName = e.target.innerText;
+    let operationName = e.target.innerText;
     if (displayNum1 && displayNum2 && lastOperation) {
       calculate();
     } else {
@@ -56,39 +56,15 @@ operationElement.forEach((operation) => {
 /* ****************** */
 /* Clear var function */
 /* ****************** */
-const clearVar = (name = "") => {
-  displayNum1 += displayNum2 + " " + name + " ";
-  displayOne.innerText = displayNum1;
-  displayTwo.innerText = "0";
-  displayNum2 = "";
-  displayTemp.innerText = result;
-};
+const clearVar = (name = '') => {
+  displayNum1+= 
+}
 
 
-/* ************************************************************* */
-/* Calculate function - to perform thr mathematical calculations */
-/* ************************************************************* */
-const calculate = () => {
+// Calculate function
+const calculate = () => { 
   if (lastOperation === "×") {
     result = parseFloat(result) * parseFloat(displayNum2);
-  } else if (lastOperation === "+") {
-    result = parseFloat(result) + parseFloat(displayNum2);
-  } else if (lastOperation === "-") {
-    result = parseFloat(result) - parseFloat(displayNum2);
-  } else if (lastOperation === "÷") {
-    result = parseFloat(result) / parseFloat(displayNum2);
-  } else if (lastOperation === "%") {
-    result = parseFloat(result) % parseFloat(displayNum2);
+    console.log(result);
   }
-};
-
-equalElement.addEventListener("click", () => {
-  if (!displayNum2 || !displayNum1) return;
-  haveDot = false;
-  calculate();
-  clearVar();
-  displayTwo.innerText = result;
-  displayTemp.innerText = "";
-  displayNum2 = result;
-  displayNum1 = "";
-});
+}

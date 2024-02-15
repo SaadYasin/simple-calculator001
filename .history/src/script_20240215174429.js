@@ -69,7 +69,7 @@ const clearVar = (name = "") => {
 /* Calculate function - to perform thr mathematical calculations */
 /* ************************************************************* */
 const calculate = () => {
-  if (lastOperation === "×") {
+  if (lastOperation === "x") {
     result = parseFloat(result) * parseFloat(displayNum2);
   } else if (lastOperation === "+") {
     result = parseFloat(result) + parseFloat(displayNum2);
@@ -82,7 +82,7 @@ const calculate = () => {
   }
 };
 
-equalElement.addEventListener("click", () => {
+equalEl.addEventListener("click", () => {
   if (!displayNum2 || !displayNum1) return;
   haveDot = false;
   calculate();
